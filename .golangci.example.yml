@@ -1,0 +1,42 @@
+# Example golangci-lint v2 configuration for the kube-types plugin.
+#
+# Use golangci-lint's custom-gcl module plugin builder:
+#   https://golangci-lint.run/plugins/module-plugins/
+
+version: "2"
+
+linters-settings:
+  custom:
+    kube-types:
+      type: "module"
+      description: "Detects untyped Kubernetes manifest construction and suggests typed structs"
+      settings:
+        # Analyze test files too (default: false).
+        include_test_files: false
+
+        # Per-check configuration. Omit or leave empty for all checks enabled.
+        # Valid checks: "map_literal", "sprintf_yaml", "unstructured_gvk"
+        checks:
+          map_literal:
+            enabled: true
+          sprintf_yaml:
+            enabled: true
+            # Extend default markers ("apiVersion:", "kind:") with additional ones.
+            additional_markers:
+              - "metadata:"
+          unstructured_gvk:
+            enabled: true
+
+        # Register additional GVKs beyond the built-in table.
+        extra_known_gvks:
+          - api_version: "example.io/v1"
+            kind: "Widget"
+            typed_package: "example.io/api/v1.Widget"
+
+        # Skip diagnostics for specific GVKs (format: "apiVersion/kind").
+        ignore_gvks:
+          - "v1/ConfigMap"
+
+linters:
+  enable:
+    - kube-types

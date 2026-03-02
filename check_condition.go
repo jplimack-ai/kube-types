@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	conditionURL    = "https://github.com/togethercomputer/kube-types#condition_checks"
-	conditionMapURL = "https://github.com/togethercomputer/kube-types#condition_map_literal"
+	conditionURL    = "https://github.com/jplimack-ai/kube-types#condition_checks"
+	conditionMapURL = "https://github.com/jplimack-ai/kube-types#condition_map_literal"
 )
 
 // conditionStatusConstants maps raw string values to their typed constant names.

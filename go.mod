@@ -1,4 +1,4 @@
-module github.com/togethercomputer/kube-types
+module github.com/jplimack-ai/kube-types
 
 go 1.26
 

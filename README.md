@@ -271,8 +271,8 @@ In your `.custom-gcl.yml`:
 ```yaml
 version: v2.1.0
 plugins:
-  - module: github.com/togethercomputer/kube-types
-    import: github.com/togethercomputer/kube-types
+  - module: github.com/jplimack-ai/kube-types
+    import: github.com/jplimack-ai/kube-types
     version: latest
 ```
 

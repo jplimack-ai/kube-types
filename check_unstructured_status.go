@@ -6,7 +6,7 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
-const unstructuredStatusURL = "https://github.com/togethercomputer/kube-types#unstructured_status"
+const unstructuredStatusURL = "https://github.com/jplimack-ai/kube-types#unstructured_status"
 
 // checkUnstructuredStatusCall flags unstructured.SetNestedField/SetNestedSlice calls
 // targeting the "status" path.

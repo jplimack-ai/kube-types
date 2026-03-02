@@ -1,9 +1,9 @@
-# kube-types
+# kubetyped
 
-[![CI](https://github.com/jplimack-ai/kube-types/actions/workflows/ci.yml/badge.svg)](https://github.com/jplimack-ai/kube-types/actions/workflows/ci.yml)
-[![Go Report Card](https://goreportcard.com/badge/github.com/jplimack-ai/kube-types)](https://goreportcard.com/report/github.com/jplimack-ai/kube-types)
-[![Go Reference](https://pkg.go.dev/badge/github.com/jplimack-ai/kube-types.svg)](https://pkg.go.dev/github.com/jplimack-ai/kube-types)
-[![Release](https://img.shields.io/github/v/release/jplimack-ai/kube-types)](https://github.com/jplimack-ai/kube-types/releases)
+[![CI](https://github.com/jplimack-ai/kubetyped/actions/workflows/ci.yml/badge.svg)](https://github.com/jplimack-ai/kubetyped/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/jplimack-ai/kubetyped)](https://goreportcard.com/report/github.com/jplimack-ai/kubetyped)
+[![Go Reference](https://pkg.go.dev/badge/github.com/jplimack-ai/kubetyped.svg)](https://pkg.go.dev/github.com/jplimack-ai/kubetyped)
+[![Release](https://img.shields.io/github/v/release/jplimack-ai/kubetyped)](https://github.com/jplimack-ai/kubetyped/releases)
 
 A [golangci-lint](https://golangci-lint.run/) v2 module plugin that detects untyped Kubernetes manifest construction and suggests typed Go structs.
 
@@ -16,22 +16,22 @@ version: "2"
 
 linters-settings:
   custom:
-    kube-types:
+    kubetyped:
       type: "module"
       settings:
         include_test_files: false
 
 linters:
   enable:
-    - kube-types
+    - kubetyped
 ```
 
 Example diagnostics:
 
 ```
-deployment.go:12:5: use *appsv1.Deployment (import "k8s.io/api/apps/v1") instead of map[string]any for apps/v1/Deployment (kube-types)
-deployment.go:20:2: deprecated API version extensions/v1beta1 for Ingress (removed in Kubernetes 1.22); use networking.k8s.io/v1 instead (kube-types)
-deployment.go:28:2: os.ReadFile of YAML file "manifests/pod.yaml"; consider using typed Kubernetes structs from k8s.io/api (kube-types)
+deployment.go:12:5: use *appsv1.Deployment (import "k8s.io/api/apps/v1") instead of map[string]any for apps/v1/Deployment (kubetyped)
+deployment.go:20:2: deprecated API version extensions/v1beta1 for Ingress (removed in Kubernetes 1.22); use networking.k8s.io/v1 instead (kubetyped)
+deployment.go:28:2: os.ReadFile of YAML file "manifests/pod.yaml"; consider using typed Kubernetes structs from k8s.io/api (kubetyped)
 ```
 
 ## Why
@@ -43,7 +43,7 @@ Kubernetes resources constructed via `map[string]any`, `fmt.Sprintf` YAML templa
 - Typos in field names are runtime errors (or silent misconfigurations)
 - Schema changes break silently
 
-`kube-types` catches these patterns and points you to the typed struct you should use instead.
+`kubetyped` catches these patterns and points you to the typed struct you should use instead.
 
 ## Checks
 
@@ -271,8 +271,8 @@ In your `.custom-gcl.yml`:
 ```yaml
 version: v2.1.0
 plugins:
-  - module: github.com/jplimack-ai/kube-types
-    import: github.com/jplimack-ai/kube-types
+  - module: github.com/jplimack-ai/kubetyped
+    import: github.com/jplimack-ai/kubetyped
     version: latest
 ```
 
@@ -291,7 +291,7 @@ version: "2"
 
 linters-settings:
   custom:
-    kube-types:
+    kubetyped:
       type: "module"
       description: "Detects untyped Kubernetes manifest construction and suggests typed structs"
       settings:
@@ -344,7 +344,7 @@ linters-settings:
 
 linters:
   enable:
-    - kube-types
+    - kubetyped
 ```
 
 ### Configuration Reference
@@ -390,10 +390,10 @@ reject_gvks:
 
 ### Suppressing Diagnostics
 
-Use `//nolint:kube-types` to suppress a specific line:
+Use `//nolint:kubetyped` to suppress a specific line:
 
 ```go
-m := map[string]any{ //nolint:kube-types
+m := map[string]any{ //nolint:kubetyped
     "apiVersion": "v1",
     "kind":       "ConfigMap",
 }

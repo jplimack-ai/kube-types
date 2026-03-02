@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -10,14 +10,14 @@ import (
 )
 
 func init() {
-	register.Plugin("kube-types", New)
+	register.Plugin("kubetyped", New)
 }
 
-// New creates a new kube-types linter plugin instance.
+// New creates a new kubetyped linter plugin instance.
 func New(settings any) (register.LinterPlugin, error) {
 	s, err := register.DecodeSettings[Settings](settings)
 	if err != nil {
-		return nil, fmt.Errorf("decoding kube-types settings: %w", err)
+		return nil, fmt.Errorf("decoding kubetyped settings: %w", err)
 	}
 
 	if err := s.validateChecks(); err != nil {

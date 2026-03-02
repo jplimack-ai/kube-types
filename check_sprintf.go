@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
-const sprintfYAMLURL = "https://github.com/jplimack-ai/kube-types#sprintf_yaml"
+const sprintfYAMLURL = "https://github.com/jplimack-ai/kubetyped#sprintf_yaml"
 
 // defaultYAMLMarkers are strings that suggest a YAML Kubernetes manifest template.
 var defaultYAMLMarkers = []string{"apiVersion:", "kind:"}

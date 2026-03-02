@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"go/ast"
@@ -15,7 +15,7 @@ import (
 
 func newAnalyzer(p *plugin) *analysis.Analyzer {
 	return &analysis.Analyzer{
-		Name:     "kubetypes",
+		Name:     "kubetyped",
 		Doc:      "detects untyped Kubernetes manifest construction (map literals, sprintf YAML, unstructured) and suggests typed structs",
 		Requires: []*analysis.Analyzer{inspect.Analyzer},
 		Run: func(pass *analysis.Pass) (any, error) {

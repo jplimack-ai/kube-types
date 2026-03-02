@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	deprecatedAPIURL = "https://github.com/jplimack-ai/kube-types#deprecated_api"
-	rejectGVKsURL    = "https://github.com/jplimack-ai/kube-types#reject_gvks"
+	deprecatedAPIURL = "https://github.com/jplimack-ai/kubetyped#deprecated_api"
+	rejectGVKsURL    = "https://github.com/jplimack-ai/kubetyped#reject_gvks"
 )
 
 // gvkAction indicates what the caller should do after evaluating GVK policy.

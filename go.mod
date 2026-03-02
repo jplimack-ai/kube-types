@@ -1,4 +1,4 @@
-module github.com/jplimack-ai/kube-types
+module github.com/jplimack-ai/kubetyped
 
 go 1.26
 

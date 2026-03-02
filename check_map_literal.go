@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -7,7 +7,7 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
-const mapLiteralURL = "https://github.com/jplimack-ai/kube-types#map_literal"
+const mapLiteralURL = "https://github.com/jplimack-ai/kubetyped#map_literal"
 
 // checkMapLiteralExpr detects map[string]any{} or map[string]interface{}{} composite
 // literals (including named type aliases) that contain both "apiVersion" and "kind"

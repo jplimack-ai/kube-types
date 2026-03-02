@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 const (
 	typeMetaPkgPath = "k8s.io/apimachinery/pkg/apis/meta/v1"
 	schemaPkgPath   = "k8s.io/apimachinery/pkg/runtime/schema"
-	rawGVKStringURL = "https://github.com/jplimack-ai/kube-types#raw_gvk_string"
+	rawGVKStringURL = "https://github.com/jplimack-ai/kubetyped#raw_gvk_string"
 )
 
 // checkRawGVKStringCompositeLit flags raw string literals in TypeMeta and GroupVersionKind composite literals.

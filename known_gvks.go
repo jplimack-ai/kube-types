@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 // gvkInfo holds the typed Go struct info for a known Kubernetes GVK.
 type gvkInfo struct {

@@ -1,6 +1,9 @@
 # kube-types
 
 [![CI](https://github.com/togethercomputer/kube-types/actions/workflows/ci.yml/badge.svg)](https://github.com/togethercomputer/kube-types/actions/workflows/ci.yml)
+[![Go Report Card](https://goreportcard.com/badge/github.com/togethercomputer/kube-types)](https://goreportcard.com/report/github.com/togethercomputer/kube-types)
+[![Go Reference](https://pkg.go.dev/badge/github.com/togethercomputer/kube-types.svg)](https://pkg.go.dev/github.com/togethercomputer/kube-types)
+[![Release](https://img.shields.io/github/v/release/togethercomputer/kube-types)](https://github.com/togethercomputer/kube-types/releases)
 
 A [golangci-lint](https://golangci-lint.run/) v2 module plugin that detects untyped Kubernetes manifest construction and suggests typed Go structs.
 

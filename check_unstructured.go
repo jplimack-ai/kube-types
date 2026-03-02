@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -13,7 +13,7 @@ import (
 
 const (
 	unstructuredPkgPath = "k8s.io/apimachinery/pkg/apis/meta/v1/unstructured"
-	unstructuredGVKURL  = "https://github.com/jplimack-ai/kube-types#unstructured_gvk"
+	unstructuredGVKURL  = "https://github.com/jplimack-ai/kubetyped#unstructured_gvk"
 )
 
 // checkUnstructuredGVKExpr detects calls like:

@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"go/ast"
@@ -341,8 +341,8 @@ func TestPluginInterface(t *testing.T) {
 	if len(analyzers) != 1 {
 		t.Fatalf("BuildAnalyzers() returned %d analyzers, want 1", len(analyzers))
 	}
-	if analyzers[0].Name != "kubetypes" {
-		t.Fatalf("analyzer Name = %q, want %q", analyzers[0].Name, "kubetypes")
+	if analyzers[0].Name != "kubetyped" {
+		t.Fatalf("analyzer Name = %q, want %q", analyzers[0].Name, "kubetyped")
 	}
 }
 

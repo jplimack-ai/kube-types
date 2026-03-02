@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -9,7 +9,7 @@ import (
 	"golang.org/x/tools/go/analysis"
 )
 
-const embeddedYAMLURL = "https://github.com/jplimack-ai/kube-types#embedded_yaml"
+const embeddedYAMLURL = "https://github.com/jplimack-ai/kubetyped#embedded_yaml"
 
 // checkEmbeddedYAMLFiles scans file comments for //go:embed directives
 // that reference .yaml or .yml files.

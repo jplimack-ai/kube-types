@@ -1,4 +1,4 @@
-package kubetypes
+package kubetyped
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"strings"
 )
 
-// Settings holds configuration for the kube-types linter.
+// Settings holds configuration for the kubetyped linter.
 type Settings struct {
 	// IncludeTestFiles controls whether test files are analyzed.
 	// Default false — test files are skipped.

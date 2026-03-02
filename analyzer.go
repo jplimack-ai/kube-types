@@ -27,7 +27,7 @@ func newAnalyzer(p *plugin) *analysis.Analyzer {
 func run(pass *analysis.Pass, settings *Settings, gvkTable map[string]gvkInfo) (any, error) {
 	enabled := settings.enabledChecks()
 	markers := settings.markersForSprintfYAML()
-	insp := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
+	insp, _ := pass.ResultOf[inspect.Analyzer].(*inspector.Inspector)
 
 	// Track SetAPIVersion/SetKind pairs per receiver for the unstructured check.
 	pairTracker := make(map[token.Pos]*gvkParts)

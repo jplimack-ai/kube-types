@@ -43,7 +43,7 @@ func buildGVKTable(extras []GVKEntry) map[string]gvkInfo {
 }
 
 // parseGVKEntry converts a GVKEntry into a gvkInfo by splitting the TypedPackage.
-// Example: "k8s.io/api/apps/v1.Deployment" → ImportPath="k8s.io/api/apps/v1", ShortName="v1.Deployment"
+// Example: "k8s.io/api/apps/v1.Deployment" splits into ImportPath="k8s.io/api/apps/v1", ShortName="v1.Deployment".
 func parseGVKEntry(entry GVKEntry) gvkInfo {
 	tp := entry.TypedPackage
 	if idx := strings.LastIndex(tp, "."); idx >= 0 {

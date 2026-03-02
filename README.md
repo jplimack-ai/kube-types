@@ -177,7 +177,7 @@ linters:
 ### Configuration Reference
 
 | Field | Type | Default | Description |
-|-------|------|---------|-------------|
+| ----- | ---- | ------- | ----------- |
 | `include_test_files` | `bool` | `false` | Analyze `_test.go` files |
 | `checks` | `map[string]CheckConfig` | all enabled | Per-check enable/disable and settings |
 | `checks.<name>.enabled` | `*bool` | `true` | Enable or disable a specific check |

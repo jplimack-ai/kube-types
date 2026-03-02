@@ -1,15 +1,113 @@
 version: "2"
 
-linters:
-  enable:
-    - errcheck
-    - govet
-    - staticcheck
-    - unused
-    - ineffassign
+run:
+  timeout: 5m
+  allow-parallel-runners: true
 
-linters-settings:
-  govet:
-    enable-all: true
-    disable:
-      - fieldalignment
+linters:
+  default: none
+  enable:
+  # --- Error handling ---
+  - errcheck
+  - errorlint
+  - errname
+  - nilerr
+  - wrapcheck
+  - nilnesserr
+  - nilnil
+
+  # --- Bug detection ---
+  - forcetypeassert
+  - copyloopvar
+  - durationcheck
+  - embeddedstructfieldcheck
+  - exhaustive
+  - makezero
+  - reassign
+  - iotamixing
+  - ineffassign
+  - wastedassign
+  - bidichk
+  - asasalint
+  - gochecksumtype
+  - mirror
+
+  # --- Style & convention ---
+  - dupl
+  - dupword
+  - goconst
+  - misspell
+  - nakedret
+  - unconvert
+  - unparam
+  - prealloc
+  - predeclared
+  - usestdlibvars
+  - recvcheck
+  - whitespace
+  - asciicheck
+  - dogsled
+  - goprintffuncname
+
+  # --- Complexity ---
+  - cyclop
+  - funlen
+  - nestif
+  - interfacebloat
+
+  # --- Code quality ---
+  - staticcheck
+  - unused
+  - govet
+  - exptostd
+  - intrange
+  - modernize
+  - perfsprint
+  - nolintlint
+  - gocritic
+  - godot
+
+  # --- Security ---
+  - gosec
+
+  # --- Testing ---
+  - usetesting
+  - testableexamples
+  - thelper
+
+  # --- Go directives & build ---
+  - gocheckcompilerdirectives
+
+  # --- Imports ---
+  - importas
+  - inamedparam
+
+  # --- Naming ---
+  - tagalign
+
+  settings:
+    cyclop:
+      max-complexity: 20
+    funlen:
+      lines: 120
+      statements: 60
+    nestif:
+      min-complexity: 8
+    nakedret:
+      max-func-lines: 20
+    goconst:
+      min-occurrences: 5
+
+  exclusions:
+    presets: []
+    rules:
+    # analysis.Analyzer.Run returns (any, error) — (nil, nil) is the standard success return.
+    - path: analyzer\.go
+      text: return both a `nil` error and an invalid value
+      linters:
+      - nilnil
+
+formatters:
+  enable:
+  - gofmt
+  - goimports

@@ -84,7 +84,7 @@ func valueRecv() {
 // Reversed pair order: SetKind before SetAPIVersion, diagnostic at min pos.
 func setPairReversed() {
 	u := &unstructured.Unstructured{}
-	u.SetKind("Deployment")      // want `SetAPIVersion\("apps/v1"\) \+ SetKind\("Deployment"\) on unstructured\.Unstructured: use \*appsv1\.Deployment \(import "k8s\.io/api/apps/v1"\) instead`
+	u.SetKind("Deployment") // want `SetAPIVersion\("apps/v1"\) \+ SetKind\("Deployment"\) on unstructured\.Unstructured: use \*appsv1\.Deployment \(import "k8s\.io/api/apps/v1"\) instead`
 	u.SetAPIVersion("apps/v1")
 }
 

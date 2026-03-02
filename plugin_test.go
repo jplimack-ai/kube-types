@@ -315,7 +315,7 @@ func TestPluginInterface(t *testing.T) {
 		t.Fatalf("New() failed: %v", err)
 	}
 
-	lp := p.(*plugin)
+	lp, _ := p.(*plugin)
 	if mode := lp.GetLoadMode(); mode != "typesinfo" {
 		t.Fatalf("GetLoadMode() = %q, want %q", mode, "typesinfo")
 	}
